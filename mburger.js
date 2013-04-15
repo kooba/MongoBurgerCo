@@ -1,9 +1,9 @@
 var app = require('./lib/app');
 
-app.init(function(success, message){
-    if(success){
-        console.log('Successfully initialized app, ' + message);
+app.init(function(err, message){
+    if(err){
+        console.log('Failed to initialized app, ' + err.message);
     } else{
-        console.log('Failed to initialized app, ' + message);
+        console.log('Successfully initialized app, ' + message);
     }
 });

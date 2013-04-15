@@ -1,19 +1,24 @@
 {
-    "name": "MongoBurgerCo",
-    "version": "0.1.0",
-    "description": "Simple Node project demonstrating new spatial features of MongoDb",
-    "main": "mburger.js",
-    "dependencies": {
-        "ejs": "~0.8.3",
-        "express": "~3.0.3",
-        "moment": "~1.7.2",
-        "crypto": "~0.0.3",
-        "mongoose": "3.4.x",
-        "logmongo": "0.1.x",
-        "should": "1.2.x",
-        "csv": "0.2.9"
-    },
-    "author": "Jakub Borys",
-    "license": "MIT",
-    "readmeFilename": "README.md"
+  "name": "MongoBurgerCo",
+  "version": "0.1.0",
+  "description": "Simple Node project demonstrating new spatial features of MongoDb",
+  "main": "mburger.js",
+  "dependencies": {
+    "ejs": "~0.8.3",
+    "express": "~3.0.3",
+    "moment": "~1.7.2",
+    "crypto": "~0.0.3",
+    "mongoose": "3.4.x",
+    "logmongo": "0.1.x",
+    "should": "1.2.x",
+    "csv": "0.2.9"
+  },
+  "author": "Jakub Borys",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "76b8d099e06e3d668e9e5e6113d709cb677b9cd3",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": ""
 }
