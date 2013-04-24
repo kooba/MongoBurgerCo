@@ -1,0 +1,70 @@
+extends layout
+
+append head
+    script(type='text/javascript')
+        $(function () {
+            $(window).resize(function () {
+                var h = $(window).height() - $('#header').outerHeight();
+                var r = h - $('#rhino').outerHeight();
+                var t = h - $('#text').outerHeight();
+
+                if (r > 0) {
+                    $('#rhino').css('padding-top', r / 2);
+                } else {
+                    $('#rhino').css('padding-top', 0);
+                }
+
+                if (t > 0) {
+                    $('#text').css('padding-top', t / 2);
+                } else {
+                    $('#text').css('padding-top', 0);
+                }
+
+            });
+
+            setTimeout(function() {
+                $(window).trigger('resize');
+            }, 200);
+        });
+append body
+    div.container-fluid
+        div.row-fluid
+            div#rhino.span5
+                //img(src="stylesheets/MongoBurgerCo.png")
+            div#text.span7
+                div.row-fluid(style="margin-bottom: 30px")
+                    div.span12
+                        div.page-header
+                            h1 Mongo Burger Co <small>UK Restaurant Locator</small>
+                        blockquote
+                            p
+                                | All our burgers are made from 100% mongo meat...
+                        p
+                            | This sample application demonstrates some of the geospatial features that come with MongoDb.
+                            | Please read the readme file for more info!
+                div.well.well-small
+                    div.row-fluid
+                        div.span3
+                            a.btn.btn-block.btn-large(href="map") Browse a map
+                        div.span9
+                            p Pan and zoom a map, to browse all of our restaurants.
+                div.well.well-small
+                    div.row-fluid
+                        div.span3
+                            a.btn.btn-block.btn-large(href="eatin") Eat-in/Take-out
+                        div.span9
+                            p Find the resaurants closest to you.
+                div.well.well-small
+                    div.row-fluid
+                        div.span3
+                            a.btn.btn-block.btn-large(href="delivery") Home Delivery
+                        div.span9
+                            p Find restaurants that offer delivery to your door.
+                div.well.well-small
+                    div.row-fluid
+                        div.span3
+                            a.btn.btn-block.btn-large(href="driveThru") Drive Thru
+                        div.span9
+                            p Tell us where you're driving, and we'll suggest restaurants that offer a drive thru service on your route.
+
+
