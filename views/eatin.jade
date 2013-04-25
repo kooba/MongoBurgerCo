@@ -1,1 +1,18 @@
 extends layout
+
+append head
+    link(rel='stylesheet', href='stylesheets/select2.css')
+    script(type='text/javascript', src='javascripts/select2.js')
+    script(type='text/javascript', src='javascripts/app_eatin.js')
+
+append body
+    div#controls.well
+        div.row-fluid.location
+            div.span1.location-label
+                label Location
+            div.span1.location-button
+                a.btn(href='#')
+                    i.icon-map-marker
+            div.span10
+                input(type='hidden', id='location',style='width:100%')
+    div#map

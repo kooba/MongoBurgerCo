@@ -26,18 +26,18 @@
         resultsLayer.addLayer(L.circleMarker(latlng, { color: '#ff0000', fillOpacity: 1, opacity: 1 }));
 
 
-        $.get('/api/restaurants', {
+        $.get('/getRestaurantsClosestToPoint', {
             latitude: latlng[0],
             longitude: latlng[1]
         }).done(function (restaurants) {
             $.each(restaurants, function (index, value) {
-                var marker = L.marker([value.Latitude, value.Longitude])
+                var marker = L.marker([value.latitude, value.longitude])
                     .bindPopup(
-                        '<p><strong>' + value.Name + '</strong><br />' +
-                        value.Street + '<br />' +
-                        value.City + '<br />' +
-                        value.PostCode + '<br />' +
-                        value.Phone + '</p>'
+                        '<p><strong>' + value.name + '</strong><br />' +
+                        value.street + '<br />' +
+                        value.city + '<br />' +
+                        value.postCode + '<br />' +
+                        value.phone + '</p>'
                     );
                 resultsLayer.addLayer(marker);
             });
