@@ -24,33 +24,30 @@
         resultsLayer.addLayer(L.circleMarker(latlng, { color: '#ff0000' }));
         
         var markerClick = function () {
-            var wkt = new Wkt.Wkt();
-            wkt.read(this.data.DeliveryArea);
-            var polygon = wkt.toObject();
+            var polygon = L.GeoJSON.geometryToLayer(this.data.deliveryArea);
             polygonLayer.clearLayers();
             polygonLayer.addLayer(polygon);
             map.fitBounds(polygon.getBounds());
         };
         
-        $.get('/api/restaurants', {
+        $.get('/getDeliveryRestaurantsClosestToPoint', {
             latitude: latlng[0],
-            longitude: latlng[1],
-            delivery: true
+            longitude: latlng[1]
         }).done(function (restaurants) {
             $.each(restaurants, function (index, value) {
-                var marker = L.marker([value.Latitude, value.Longitude])
+                var marker = L.marker([value.latitude, value.longitude])
                     .bindPopup(
-                        '<p><strong>' + value.Name + '</strong><br />' +
-                        value.Street + '<br />' +
-                        value.City + '<br />' +
-                        value.PostCode + '<br />' +
-                        value.Phone + '</p>'
+                        '<p><strong>' + value.name + '</strong><br />' +
+                        value.street + '<br />' +
+                        value.city + '<br />' +
+                        value.postCode + '<br />' +
+                        value.phone + '</p>'
                     )
                     .on('click', markerClick);
                 marker.data = value;
                 resultsLayer.addLayer(marker);
             });
-            map.fitBounds(resultsLayer.getBounds());
+            //map.fitBounds(resultsLayer.getBounds());
         });
     });
 });
