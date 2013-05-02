@@ -5,14 +5,17 @@
   "main": "mburger.js",
   "dependencies": {
     "ejs": "~0.8.3",
-    "jade": "0.28.2",
+    "jade": "~0.28.2",
     "express": "~3.0.3",
     "moment": "~1.7.2",
     "crypto": "~0.0.3",
-    "mongoose": "3.6.x",
-    "logmongo": "0.1.x",
-    "should": "1.2.x",
-    "csv": "0.2.9"
+    "mongoose": "~3.6.x",
+    "logmongo": "~0.1.x",
+    "should": "~1.2.x",
+    "csv": "~0.2.9",
+    "polyline" : "~0.0.0",
+    "simplify-js" : "~1.0.0"
+
   },
   "author": "Jakub Borys",
   "license": "BSD",

@@ -1,1 +1,33 @@
 extends layout
+
+append head
+    link(rel='stylesheet', href='stylesheets/select2.css')
+    script(type='text/javascript', src='javascripts/select2.js')
+    script(type='text/javascript', src='javascripts/app_drivethru.js')
+    style(type='text/css')
+        #controls {
+            margin: 0;
+            border-left: 0;
+            border-right: 0;
+            border-radius: 0;
+        }
+
+append body
+    div#controls.well
+        div.row-fluid.location
+            div.span1.location-label
+                label Origin
+            div.span1.location-button
+                a.btn(href='#')
+                    i.icon-map-marker
+            div.span10
+                input(type='hidden', id='from',style='width:100%')
+        div.row-fluid.location
+            div.span1.location-label
+                label Destination
+            div.span1.location-button
+                a.btn(href='#')
+                    i.icon-map-marker
+            div.span10
+                input(type='hidden', id='to',style='width:100%')
+    div#map

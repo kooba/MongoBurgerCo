@@ -68,22 +68,22 @@
                     $.each(result.routes[0].overview_path, function(i, val) {
                         polyline[polyline.length] = [val.lat(), val.lng()];
                     });
+
                     resultsLayer.addLayer(L.polyline(polyline, { color: 'red' }));
                     resultsLayer.addLayer(L.circleMarker(polyline[0], { color: '#00ff00', fillOpacity: 0.7, opacity: 1 }));
                     resultsLayer.addLayer(L.circleMarker(polyline[polyline.length-1], { color: '#ff0000', fillOpacity: 0.7, opacity: 1 }));
 
-
-                    $.get('/api/restaurants', {
+                    $.get('/getDriveThruRestaurantsOnTheWay', {
                         polyline: result.routes[0].overview_polyline.points
                     }).done(function (restaurants) {
                         $.each(restaurants, function (index, value) {
-                            var marker = L.marker([value.Latitude, value.Longitude])
+                            var marker = L.marker([value.latitude, value.longitude])
                                 .bindPopup(
-                                    '<p><strong>' + value.Name + '</strong><br />' +
-                                    value.Street + '<br />' +
-                                    value.City + '<br />' +
-                                    value.PostCode + '<br />' +
-                                    value.Phone + '</p>'
+                                    '<p><strong>' + value.name + '</strong><br />' +
+                                    value.street + '<br />' +
+                                    value.city + '<br />' +
+                                    value.postCode + '<br />' +
+                                    value.phone + '</p>'
                                 )
                                 .on('click', markerClick);
                             resultsLayer.addLayer(marker);
