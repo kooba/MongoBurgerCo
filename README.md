@@ -20,7 +20,7 @@ To see app in action browse to: [mongoburgerco.herokuapp.com](http://mongoburger
 
 ## MongoDB spatial features.
 
-Sample application shows use of: $geoWithin, $near and $geoIntersects queries.
+Sample application showing use of: $geoWithin, $near and $geoIntersects queries.
 
 Currently MongoDB doesn't support [querying along Polyline](https://jira.mongodb.org/browse/SERVER-4339) which is required for "Drive Thru" example.
 Sample of workaround using Douglas-Peucker line simplification algorithm is shown.
