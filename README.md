@@ -11,8 +11,8 @@ All credits go to the original author.
 
 ```sh
   $ git clone git://github.com/kooba/MongoBurgerCo.git
-  $ npm install
   $ cd MongoBurgerCo
+  $ npm install
   $ node mburger.js
 ```
 
