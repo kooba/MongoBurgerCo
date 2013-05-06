@@ -3,18 +3,12 @@ var app = require('./lib/app');
 params = {
     config: {
         project: 'Mongo Burger Company'
-//        public: '/../public',
-//        per_page: '10'
     },
     dev: {
-        user: 'user',
-        pass: 'password',
         port: '3000',
         db:   'mongodb://localhost/MongoBurgerCo'
     },
     prod: {
-        user: 'user',
-        pass: 'password',
         db:   'mongodb://localhost/MongoBurgerCo'
     }
 }
