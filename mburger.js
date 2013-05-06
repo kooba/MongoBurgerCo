@@ -9,7 +9,7 @@ params = {
         db:   'mongodb://localhost/MongoBurgerCo'
     },
     prod: {
-        db:   'mongodb://localhost/MongoBurgerCo'
+        db:   'mongodb://localhost/MongoBurgerCoProd'
     }
 }
 
