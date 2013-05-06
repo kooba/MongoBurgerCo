@@ -5,6 +5,8 @@ Simple Node.js project demonstrating few spatial features of MongoDB
 This is a port of Simon Bartlett's C# [RavenBurgerCo](https://github.com/sibartlett/RavenBurgerCo) project.
 All credits go to the original author.
 
+To see app in action browse to: [mongoburgerco.herokuapp.com](http://mongoburgerco.herokuapp.com/)
+
 ## Install
 
 **NOTE:** You need to have node.js and mongodb installed and running.
@@ -19,7 +21,7 @@ All credits go to the original author.
 ## RavenDB vs MongoDB spatial features.
 
 RavenDB stores shapes in [WKT](http://en.wikipedia.org/wiki/Well-known_text) (Well-known text) format whereas MongoDB in [GeoJSON](http://geojson.org/geojson-spec.html) format.
-This means reversed order of coordinates:
+This means reversed order of coordinates is used:
 WKT: latitude, longitude
 GeoJSON: longitude, latitude
 
