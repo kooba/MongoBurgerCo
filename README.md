@@ -18,14 +18,11 @@ To see app in action browse to: [mongoburgerco.herokuapp.com](http://mongoburger
   $ node mburger.js
 ```
 
-## RavenDB vs MongoDB spatial features.
+## MongoDB spatial features.
 
-RavenDB stores shapes in [WKT](http://en.wikipedia.org/wiki/Well-known_text) (Well-known text) format whereas MongoDB in [GeoJSON](http://geojson.org/geojson-spec.html) format.
-This means reversed order of coordinates is used:
-WKT: latitude, longitude
-GeoJSON: longitude, latitude
+Sample application shows use of: $geoWithin, $near and $geoIntersects queries.
 
-MongoDB doesn't support some of the queries required for this example like [querying along Polyline](https://jira.mongodb.org/browse/SERVER-4339).
+Currently MongoDB doesn't support [querying along Polyline](https://jira.mongodb.org/browse/SERVER-4339) which is required for "Drive Thru" example.
 Sample of workaround using Douglas-Peucker line simplification algorithm is shown.
 
 ## Scenario
