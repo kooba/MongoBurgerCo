@@ -9,7 +9,7 @@ To see app in action browse to: [mongoburgerco.herokuapp.com](http://mongoburger
 
 ## Install
 
-**NOTE:** You need to have node.js and mongodb installed and running.
+**NOTE:** You need to have Node.js (version 0.10.4 or later) and MongoDB (version 2.4.3 or later) installed and running.
 
 ```sh
   $ git clone git://github.com/kooba/MongoBurgerCo.git
